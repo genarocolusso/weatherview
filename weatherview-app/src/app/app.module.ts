@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { WeatherAppModule } from './weather-app/weather-app.module';
 @NgModule({
   declarations: [
-    AppComponent 
+    AppComponent
   ],
   imports: [
     BrowserModule,

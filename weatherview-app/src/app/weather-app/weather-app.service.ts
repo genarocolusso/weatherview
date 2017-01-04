@@ -6,7 +6,7 @@ export class WeatherService {
   getModelData(): Object {
     return {
 
-  
+
 
     };
   }
