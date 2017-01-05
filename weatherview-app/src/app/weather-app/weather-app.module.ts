@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpModule }    from '@angular/http';
+import { HttpModule, JsonpModule }    from '@angular/http';
 
 //components e container
 import { cidadeComponent } from './components/cidades/cidades.component';
@@ -9,6 +9,7 @@ import { WeatherAppComponent } from './containers/weather-app/weather-app.compon
 import { temperaturaComponent } from './components/temperatura/temperatura.component';
 // services
 import { WeatherService } from './weather-app.service';
+import { temperaturaService } from './components/temperatura/temperatura.service';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,13 @@ import { WeatherService } from './weather-app.service';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule
   ],
   providers: [
     // add the service to our sub-module
-    WeatherService
+    WeatherService,
+    temperaturaService
   ],
   exports: [
     WeatherAppComponent
