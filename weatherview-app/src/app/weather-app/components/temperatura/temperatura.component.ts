@@ -1,30 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { temperaturaService } from '../temperatura/temperatura.service';
+import { Cidade } from '../../models/cidade.interface';
 
 
-import { temperaturaService } from './temperatura.service';
+
 
 @Component({
   selector: 'temperatura',
   template: `
     <h1> Aqui é pra sair as temperatura massa </h1>
-     <button (click)="onTestGet()"> Clica ae </button>
-     <p> Output: {{getData}} </p>
+     <div *ngIf="temperaturas">
+     <p > Output: {{temperaturas | json}} </p>
+     </div>
   `,
   providers: [temperaturaService]
 })
-export class temperaturaComponent implements OnInit {
-     getData: string;
-  constructor(private tempService:temperaturaService) {
+export class temperaturaComponent implements OnInit  {
+
+      @Input() temperaturas: any;
+
+  constructor() {
 
  }
- onTestGet(){
-    this.tempService.getTemperaturas()
-      .subscribe(
-        data => this.getData = JSON.stringify(data),
-        error => alert(error),
-        () => console.log("finished")
-      );
- }
 
-  ngOnInit() {}
+
+  ngOnInit() {
+
+
+  }
 }
