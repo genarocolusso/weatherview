@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'weather-app',
   template: `
       <cidades ></cidades>
-      <temperatura  [temperaturas]="getData"></temperatura>
+    
   `,
   styleUrls: ['./weather-app.component.scss']
 })

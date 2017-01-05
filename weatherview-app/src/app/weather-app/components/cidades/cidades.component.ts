@@ -12,6 +12,7 @@ import { Cidade } from '../../models/cidade.interface';
     {{c.lat}}   <br>
     {{c.long}} <br>
    </p>
+    <temperatura   [temperaturas]="getData"></temperatura>
   `,
   providers: [temperaturaService]
 })
