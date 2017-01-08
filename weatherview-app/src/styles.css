@@ -1,1 +1,340 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #00BCD4 !important;
+}
+
+.margintop {
+  margin-top: 40px;
+}
+
+body * {
+  transition: 200ms all ease-in-out;
+}
+
+.card,.cardselected {
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.2), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+  min-height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+  outline: 0px solid;
+  transition: 200ms all ease-in-out;
+}
+ .cardselected, .card:hover {
+  outline: 3px solid #ffbf4b;
+  border-radius: 0px;
+}
+
+.cardimg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  min-height: 190px;
+}
+
+.cardimg p {
+  font-size: 18px;
+}
+
+.city_name {
+  padding: 10px;
+  color: white;
+}
+
+.inlineinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 20px;
+}
+
+h2.tempnow {
+  color: white;
+  font-size: 48px;
+}
+
+.previsaopanel.daysdatas {
+  margin-top: 20px;
+}
+
+.previsaopanel h1 {
+  color: white;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.berlin {
+  background-image: url(http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Germany/Berlin/berlin-attractions-Brandenburger%20Tor-xlarge.jpg);
+  width: 100%;
+  background-size: cover;
+}
+
+.newyork {
+  background-image: url(https://media-cdn.tripadvisor.com/media/photo-o/06/f3/db/73/novotel-new-york-times.jpg);
+  width: 100%;
+  background-size: cover;
+}
+
+.tokyo {
+  background-image: url(http://static.boredpanda.com/blog/wp-content/uploads/2016/03/i-got-lost-in-the-beauty-of-tokyo-at-night-14__880.jpg);
+  width: 100%;
+  background-size: cover;
+}
+
+.content {
+  padding: 10px;
+}
+
+.weather_main {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: -12px;
+  left: 44px;
+}
+
+.weather_icon {
+  font-size: 16px;
+  color: #bdbdbd;
+}
+
+.weather_icon .data {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+.weather_icon i {
+  margin: 0px 4px;
+}
+
+.clear {
+  width: 60px;
+  height: 60px;
+  background-color: #fbc31a;
+  border-radius: 50%;
+  position: absolute;
+  animation: 2s pulseshadowplay infinite alternate both;
+}
+
+.few_clouds {
+  width: 60px;
+  height: 60px;
+  background-color: #fbc31a;
+  border-radius: 50%;
+  position: absolute;
+  animation: 2s pulseshadowplay infinite alternate both;
+}
+.few_clouds::after {
+  display: block;
+  content: '';
+  top: 16px;
+  width: 60px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  left: -40px;
+  animation: 10s 300ms cloudgoesleftright infinite both ease-in-out;
+}
+
+.scattered_clouds {
+  width: 60px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  left: -40px;
+  animation: 6s cloudgoesleftright infinite both ease-in-out;
+}
+.scattered_clouds::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  top: -14px;
+  position: absolute;
+  left: 30px;
+  border-radius: 25px;
+}
+.scattered_clouds::before {
+  content: '';
+  display: block;
+  background-color: #fff;
+  width: 60px;
+  height: 40px;
+  top: 0px;
+  position: absolute;
+  left: 39px;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+}
+
+.broken_clouds {
+  width: 100px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  position: absolute;
+  left: -40px;
+  animation: 6s cloudgoesleftright infinite both ease-in-out;
+}
+.broken_clouds::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  top: -14px;
+  position: absolute;
+  left: 30px;
+  border-radius: 25px;
+}
+.broken_clouds::before {
+  content: '';
+  display: block;
+  background-color: #929292;
+  width: 81px;
+  height: 40px;
+  top: 9px;
+  position: absolute;
+  left: 39px;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.shower_rain,
+.rain {
+  width: 10px;
+  height: 10px;
+  background-color: #03A9F4;
+  border-radius: 20px;
+  position: absolute;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  top: 20px;
+  transform: rotate(45deg);
+  animation: 1s scaledrops infinite ease-in-out;
+}
+.shower_rain::after, .shower_rain::before,
+.rain::after,
+.rain::before {
+  width: 10px;
+  height: 10px;
+  background-color: #03A9F4;
+  border-radius: 20px;
+  position: absolute;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  top: 20px;
+  display: block;
+  content: '';
+}
+.shower_rain::before,
+.rain::before {
+  left: 30px;
+}
+
+.snow {
+  font-family: "FontAwesome";
+  width: 10px;
+  height: 10px;
+  color: white;
+  border-radius: 20px;
+  position: absolute;
+  font-size: 25px;
+  top: 0px;
+  transform: rotate(45deg);
+  animation: 3s scaledrops infinite ease-in-out;
+}
+.snow::after, .snow::before {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  display: block;
+  content: '\f2dc';
+}
+.snow::before {
+  left: 30px;
+}
+
+.mist {
+  font-family: "Helvetica";
+  width: 10px;
+  height: 10px;
+  color: white;
+  border-radius: 20px;
+  position: absolute;
+  display: block;
+  content: '~';
+  font-size: 73px;
+  top: -20px;
+  animation: 3s scalemist infinite ease-in-out;
+}
+.mist::after, .mist::before {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  display: block;
+  content: '~';
+}
+.mist::before {
+  top: 10px;
+}
+
+@keyframes pulseshadowplay {
+  0% {
+    box-shadow: 0px 0px 4px 5px rgba(255, 213, 62, 0.66);
+  }
+  100% {
+    box-shadow: 0px 0px 12px 15px rgba(255, 213, 62, 0.1);
+  }
+}
+@keyframes cloudgoesleftright {
+  0% {
+    left: -40px;
+  }
+  50% {
+    left: 0px;
+  }
+}
+@keyframes scaledrops {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.3);
+  }
+}
+@keyframes scalemist {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

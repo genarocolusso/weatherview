@@ -3,6 +3,7 @@ id: number,
 lat: number,
 long: number,
 name: string,
-code: string
+code: string,
+img: string 
 
 }

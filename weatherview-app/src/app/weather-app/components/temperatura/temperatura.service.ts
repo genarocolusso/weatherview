@@ -16,4 +16,10 @@ export class temperaturaService {
      return  this.http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q='+city.code+'&units=metric&mode=json&units=metric&cnt=7&appid=467f50a085d0372acfa207deee09b5ea')
       .map(response => response.json());
  }
+
+getMycity(city){
+  return  this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&mode=json&units=metric&appid=467f50a085d0372acfa207deee09b5ea')
+   .map(response => response.json());
+}
+
 }
